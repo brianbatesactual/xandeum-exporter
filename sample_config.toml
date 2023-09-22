@@ -1,0 +1,23 @@
+#The RPC can be local OR a remote target
+rpc = 'http://localhost:8899'
+
+#The target is the Prometheus server. Can be hosted locally or remotely.
+target = '0.0.0.0:9179'
+vote_account_whitelist = [
+    'a',
+    'b',
+    'c'
+]
+staking_account_whitelist = [
+    'aa',
+    'bb',
+    'cc'
+]
+
+#Maxmind is not required for basic metrics.
+#API key and token are used here. Do not use your account login
+#TT Need to update field names
+
+[maxmind]
+username = "12345"
+password = "replace_me"
