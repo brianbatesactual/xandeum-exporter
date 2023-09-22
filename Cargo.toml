@@ -1,6 +1,6 @@
 [package]
 name = "xandeum-exporter"
-version = "0.0.1"
+version = "0.0.2"
 author = "Brian Bates <brian_bates@me.com>"
 edition = "2018"
 description = "A Prometheus-based metrics exporter for Xandeum L1 Blockchain."
