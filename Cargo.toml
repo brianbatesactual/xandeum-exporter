@@ -1,0 +1,11 @@
+[package]
+name = "xandeum-exporter"
+version = "0.0.1"
+author = "Brian Bates <brian_bates@me.com>"
+edition = "2018"
+description = "A Prometheus-based metrics exporter for Xandeum L1 Blockchain."
+repository = "https://github.com/brianbatesactual/xandeum-exporter"
+license = "Apache-2.0"
+readme = "README.md"
+
+[dependencies]
