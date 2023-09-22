@@ -1,4 +1,4 @@
-ause crate::persistent_database::metadata::Metadata;
+use crate::persistent_database::metadata::Metadata;
 use crate::XANDEUM_EXPORTER_VERSION;
 use anyhow::Context;
 use log::warn;
