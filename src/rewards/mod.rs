@@ -82,6 +82,8 @@ pub struct RewardsMonitor<'a> {
     average_staking_apy: &'a GaugeVec,
     /// Prometheus cumulative validator rewards gauge.
     validator_rewards: &'a IntGaugeVec,
+    /// Prometheus validator credit gauge.
+    // validator_credits: &'a IntGaugeVec,
     /// Caching database for rewards
     cache: &'a RewardsCache,
     /// The whitelist of staking account pubkeys constraining APY calculations.
@@ -97,6 +99,7 @@ impl<'a> RewardsMonitor<'a> {
         current_staking_apy: &'a GaugeVec,
         average_staking_apy: &'a GaugeVec,
         validator_rewards: &'a IntGaugeVec,
+        // validator_credits: &'a IntGaugeVec,
         rewards_cache: &'a RewardsCache,
         staking_account_whitelist: &'a Whitelist,
         vote_accounts_whitelist: &'a Whitelist,
@@ -106,6 +109,7 @@ impl<'a> RewardsMonitor<'a> {
             current_staking_apy,
             average_staking_apy,
             validator_rewards,
+            // validator_credits,
             cache: rewards_cache,
             staking_account_whitelist,
             vote_accounts_whitelist,

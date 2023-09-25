@@ -21,6 +21,7 @@ use solana_client::rpc_config::RpcBlockConfig;
 use solana_client::rpc_response::{RpcContactInfo, RpcVoteAccountInfo, RpcVoteAccountStatus};
 // use xandeum_sdk::epoch_info::EpochInfo;
 use solana_sdk::epoch_info::EpochInfo;
+// use solana_sdk::vote::state;
 // use xandeum_transaction_status::{TransactionDetails, UiTransactionEncoding};
 use solana_transaction_status::{TransactionDetails, UiTransactionEncoding};
 use std::collections::HashMap;
@@ -51,6 +52,7 @@ pub struct PrometheusGauges {
     pub average_staking_apy: GaugeVec,
     pub staking_commission: IntGaugeVec,
     pub validator_rewards: IntGaugeVec,
+    // pub validator_credits: IntGaugeVec,
     pub node_pubkey_balances: IntGaugeVec,
     pub node_versions: IntGaugeVec,
     pub nodes: IntGauge,
@@ -166,6 +168,12 @@ impl PrometheusGauges {
                 &[PUBKEY_LABEL]
             )
             .unwrap(),
+            // validator_credits: register_int_gauge_vec!(
+            //     "xandeum_validator_credits",
+            //     "total validator credits",
+            //     &[PUBKEY_LABEL]
+            // )
+            // .unwrap(),
             node_pubkey_balances: register_int_gauge_vec!(
                 "xandeum_node_pubkey_balances",
                 "Balance of node pubkeys",
@@ -255,6 +263,13 @@ impl PrometheusGauges {
         Ok(())
     }
 
+    // pub fn export_vote_credits(
+    //     &self,
+    //     validator_credits: &VoteState,
+    // ) -> anyhow::Result<()> {
+    //     self.validator_credits.set(validator_credits.credits as i64);
+    //     Ok(())
+    // }
     /// Exports gauges for epoch
     pub fn export_epoch_info(
         &self,
